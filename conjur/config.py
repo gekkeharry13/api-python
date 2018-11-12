@@ -103,7 +103,7 @@ class Config(object):
             if service != "core":
                 url_parts.append(service)
                 if per_account:
-                url_parts.append(account)
+                    url_parts.append(self.account)
             return "/".join(url_parts)
         else:
             raise ConfigException('Missing appliance_url')

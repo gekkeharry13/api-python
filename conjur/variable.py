@@ -59,7 +59,7 @@ class Variable(object):
 
         Returns the value of the variable as a string.
         """
-        url = "%s/variables/%s" % (self.api.config.secrets_url,
+        url = "%s/variable/%s" % (self.api.config.secrets_url,
                                          urlescape(self.id))
         if version is not None:
             url = "%s?version=%s" % (url, version)
@@ -75,7 +75,7 @@ class Variable(object):
         """
         self._attrs = None
         data = {'value': value}
-        url = "%s/variables/%s" % (self.api.config.core_url,
+        url = "%s/variable/%s" % (self.api.config.secrets_url,
                                           urlescape(self.id))
         self.api.post(url, data=data)
 
@@ -89,6 +89,6 @@ class Variable(object):
 
     def _fetch(self):
         self._attrs = self.api.get(
-            "{0}/variables/{1}".format(self.api.config.core_url,
+            "{0}/variable/{1}".format(self.api.config.secrets_url,
                                        urlescape(self.id))
         ).json()
