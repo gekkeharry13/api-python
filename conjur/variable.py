@@ -59,7 +59,7 @@ class Variable(object):
 
         Returns the value of the variable as a string.
         """
-        url = "%s/variables/%s" % (self.api.config.core_url,
+        url = "%s/variables/%s" % (self.api.config.secrets_url,
                                          urlescape(self.id))
         if version is not None:
             url = "%s?version=%s" % (url, version)
