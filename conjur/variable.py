@@ -74,7 +74,7 @@ class Variable(object):
         This increments the variable's `version_count` member by one.
         """
         self._attrs = None
-        data = {'value': value}
+        data = value
         url = "%s/variable/%s" % (self.api.config.secrets_url,
                                           urlescape(self.id))
         self.api.post(url, data=data)
