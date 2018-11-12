@@ -84,7 +84,9 @@ class API(object):
             raise ConjurException(
                 "API created without credentials can't authenticate")
 
-        url = "%s/users/%s/authenticate" % (self.config.authn_url,
+        #url = "%s/users/%s/authenticate" % (self.config.authn_url,
+        #                                    urlescape(self.login))
+        url = "%s/%s/authenticate" % (self.config.authn_url,
                                             urlescape(self.login))
 
         self.token = self._request('post', url, self.api_key).text
