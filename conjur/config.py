@@ -128,7 +128,7 @@ class Config(object):
                              doc='URL for the authz service')
 
     pubkeys_url = _service_url('pubkeys', doc='URL for the pubkeys service')
-
+    secrets_url = _service_url('secrets', doc='URL for the secrets service')
 
     cert_file = _setting('cert_file', None,
                          "Path to certificate to verify ssl requests \
